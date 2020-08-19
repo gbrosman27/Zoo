@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26B16ECF-11BB-44B2-8CD3-02A0E80F46AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Animals</RootNamespace>
+    <AssemblyName>Animals</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractAnimals\Animal.cs" />
+    <Compile Include="AnimalFactory.cs" />
+    <Compile Include="AnimalType.cs" />
+    <Compile Include="AbstractAnimals\Bird.cs" />
+    <Compile Include="EatBehaviors\BuryAndEatBoneBehavior.cs" />
+    <Compile Include="Animals\Chimpanzee.cs" />
+    <Compile Include="EatBehaviors\ConsumeBehavior.cs" />
+    <Compile Include="Animals\Dingo.cs" />
+    <Compile Include="Animals\Eagle.cs" />
+    <Compile Include="EatBehaviors\EatBehaviorFactory.cs" />
+    <Compile Include="EatBehaviors\EatBehaviorType.cs" />
+    <Compile Include="AbstractAnimals\Fish.cs" />
+    <Compile Include="MoveBehaviors\ClimbBehavior.cs" />
+    <Compile Include="MoveBehaviors\ClimbProcess.cs" />
+    <Compile Include="MoveBehaviors\FlyBehavior.cs" />
+    <Compile Include="BirthBehaviors\GiveBirthBehavior.cs" />
+    <Compile Include="Animals\Hummingbird.cs" />
+    <Compile Include="Interfaces\IEatBehavior.cs" />
+    <Compile Include="Interfaces\IHatchable.cs" />
+    <Compile Include="Interfaces\IMoveBehavior.cs" />
+    <Compile Include="Interfaces\IMover.cs" />
+    <Compile Include="Interfaces\IReproduceBehavior.cs" />
+    <Compile Include="Animals\Kangaroo.cs" />
+    <Compile Include="BirthBehaviors\LayEggBehavior.cs" />
+    <Compile Include="AbstractAnimals\Mammal.cs" />
+    <Compile Include="MoveBehaviors\HoverBehavior.cs" />
+    <Compile Include="MoveBehaviors\HoverProcess.cs" />
+    <Compile Include="MoveBehaviors\MoveBehaviorFactory.cs" />
+    <Compile Include="MoveBehaviors\MoveBehaviorType.cs" />
+    <Compile Include="MoveBehaviors\MoveHelper.cs" />
+    <Compile Include="MoveBehaviors\NoMoveBehavior.cs" />
+    <Compile Include="Animals\Ostrich.cs" />
+    <Compile Include="MoveBehaviors\PaceBehavior.cs" />
+    <Compile Include="Animals\Platypus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BirthBehaviors\ReproduceBehaviorFactory.cs" />
+    <Compile Include="BirthBehaviors\ReproduceBehaviorType.cs" />
+    <Compile Include="Animals\Shark.cs" />
+    <Compile Include="EatBehaviors\ShowAffectionBehavior.cs" />
+    <Compile Include="Animals\Squirrel.cs" />
+    <Compile Include="MoveBehaviors\SwimBehavior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CagedItems\CagedItems.csproj">
+      <Project>{49731009-eaea-495d-a85e-1d71cf716650}</Project>
+      <Name>CagedItems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foods\Foods.csproj">
+      <Project>{88f8c121-6583-44d6-9dde-ff246b8ccf62}</Project>
+      <Name>Foods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoneyCollectors\MoneyCollectors.csproj">
+      <Project>{1C9B0C35-1E36-4899-91C3-9D03CABC8344}</Project>
+      <Name>MoneyCollectors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reproducers\Reproducers.csproj">
+      <Project>{7d13920a-f7d9-4f52-909a-8f8e0b7629d3}</Project>
+      <Name>Reproducers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{db1e82d2-e9a5-4176-8bc1-2627482666ab}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
